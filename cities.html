@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cities - Travel Blog</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .page-container {
+            position: relative;
+            background-image: url('https://news.cnrs.fr/sites/default/files/styles/visuel_principal/public/assets/images/700-07760424_72dpi.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 800px;
+            text-align: center;
+        }
+        .content h1 {
+            color: #00246b;
+        }
+        .content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .content a {
+            text-decoration: none;
+            color: #fdc7ff;
+            font-weight: bold;
+        }
+        .more-content {
+            display: none;
+            margin-top: 1rem;
+            color: #666;
+        }
+        .more-content.show {
+            display: block;
+        }
+        .read-more-btn {
+            cursor: pointer;
+            background: #fdc7ff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            color: black;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .read-more-btn:hover {
+            background: #f2f4c3;
+        }
+        .explore-more-btn {
+            background: #00246b;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .explore-more-btn:hover {
+            background: #fdc7ff;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="content">
+            <h1>Cities</h1>
+            <p>Discover the most vibrant cities around the world, from bustling metropolises to charming small towns. Learn about the top attractions, hidden gems, and cultural experiences in each city.</p>
+            <div class="more-content">
+                <p>From the towering skyscrapers of New York City to the historic streets of Paris, explore the diverse urban landscapes and cultures. Find out about the best food, landmarks, and local experiences that make each city unique.</p>
+            </div>
+            <button class="read-more-btn">Read More</button>
+            <a href="index.html" class="explore-more-btn">Explore More</a>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.read-more-btn').addEventListener('click', function() {
+            var moreContent = document.querySelector('.more-content');
+            moreContent.classList.toggle('show');
+            if (moreContent.classList.contains('show')) {
+                this.textContent = 'Read Less';
+            } else {
+                this.textContent = 'Read More';
+            }
+        });
+    </script>
+</body>
+</html>
