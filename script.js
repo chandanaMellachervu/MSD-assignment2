@@ -1,13 +1,16 @@
-
 document.querySelectorAll('header nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const href = this.getAttribute('href');
+      
+        if (href.startsWith('#')) {
+            e.preventDefault(); 
+            document.querySelector(href).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+       
     });
 });
-
 
 const menuToggle = document.querySelector('.menu-toggle');
 const navbar = document.querySelector('#navbar');
@@ -16,10 +19,7 @@ menuToggle.addEventListener('click', () => {
     navbar.classList.toggle('visible');
 });
 
-;
-
-
-
+const backToTopButton = document.querySelector('#back-to-top');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
@@ -35,7 +35,8 @@ backToTopButton.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
-ddocument.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener('DOMContentLoaded', () => {
     const readMoreButtons = document.querySelectorAll('.read-more-btn');
   
     readMoreButtons.forEach(button => {
@@ -50,5 +51,4 @@ ddocument.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-  });
-  
+});
